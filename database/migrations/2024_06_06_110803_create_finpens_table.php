@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('finpens', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->integer('saldo');
+            $table->string('book_name');
+            $table->string('province');
+            $table->text('description');
             $table->timestamps();
         });
     }
