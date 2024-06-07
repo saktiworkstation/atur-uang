@@ -17,7 +17,11 @@ class FinpenFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => mt_rand(1, 2),
+            'saldo' => $this->faker->numberBetween(1000, 1000000),
+            'book_name' => $this->faker->name,
+            'province' => $this->faker->state,
+            'description' => $this->faker->paragraph,
         ];
     }
 }
