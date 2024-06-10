@@ -25,12 +25,14 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Sakti',
             'email' => 'skarluajitkas@gmail.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),
+            'email_verified_at' => now()
         ]);
         User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),
+            'email_verified_at' => now()
         ]);
 
         Role::create(['name' => 'admin']);
