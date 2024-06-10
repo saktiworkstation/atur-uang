@@ -28,4 +28,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/admin', function () {
+    return 'Ini admin';
+});
+
+Route::get('/user', function () {
+    return 'Ini user';
+});
+
 require __DIR__.'/auth.php';
