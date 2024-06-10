@@ -30,10 +30,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/admin', function () {
     return 'Ini admin';
-});
+})->middleware('role:admin');
 
 Route::get('/user', function () {
     return 'Ini user';
-});
+})->middleware('role:user');
 
 require __DIR__.'/auth.php';
