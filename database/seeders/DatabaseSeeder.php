@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
         $roleAdmin->givePermissionTo('finpen');
         $roleAdmin->givePermissionTo('user manage');
 
-        $roleUser = Role::findByName('Sakti');
+        $roleUser = Role::findByName('user');
         $roleUser->givePermissionTo('finpen');
     }
 }
