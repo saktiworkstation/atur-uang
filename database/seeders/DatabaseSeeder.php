@@ -22,18 +22,21 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        User::create([
+        $admin = User::create([
             'name' => 'Sakti',
             'email' => 'skarluajitkas@gmail.com',
             'password' => bcrypt('password'),
             'email_verified_at' => now()
         ]);
-        User::create([
+        $admin->assignRole('admin');
+
+        $user = User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
             'email_verified_at' => now()
         ]);
+        $user->assignRole('admin');
 
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'user']);
