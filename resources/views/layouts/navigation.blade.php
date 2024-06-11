@@ -17,18 +17,22 @@
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('finpen')" :active="request()->routeIs('finpen')">
-                        {{ __('Finpen') }}
-                    </x-nav-link>
-                </div>
+                @role('user')
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('finpen')" :active="request()->routeIs('finpen')">
+                            {{ __('Finpen') }}
+                        </x-nav-link>
+                    </div>
+                @endrole
 
-                <!-- Navigation Links Admin -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('finpen.report')" :active="request()->routeIs('finpen.report')">
-                        {{ __('Finpen Report') }}
-                    </x-nav-link>
-                </div>
+                @role('admin')
+                    <!-- Navigation Links Admin -->
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('finpen.report')" :active="request()->routeIs('finpen.report')">
+                            {{ __('Finpen Report') }}
+                        </x-nav-link>
+                    </div>
+                @endrole
             </div>
 
             <!-- Settings Dropdown -->
@@ -93,18 +97,22 @@
             </x-responsive-nav-link>
         </div>
 
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('finpen')" :active="request()->routeIs('finpen')">
-                {{ __('Finpen') }}
-            </x-responsive-nav-link>
-        </div>
+        @role('user')
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('finpen')" :active="request()->routeIs('finpen')">
+                    {{ __('Finpen') }}
+                </x-responsive-nav-link>
+            </div>
+        @endrole
 
-        {{-- admin --}}
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('finpen.report')" :active="request()->routeIs('finpen.report')">
-                {{ __('Finpen Report') }}
-            </x-responsive-nav-link>
-        </div>
+        @role('admin')
+            {{-- admin --}}
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('finpen.report')" :active="request()->routeIs('finpen.report')">
+                    {{ __('Finpen Report') }}
+                </x-responsive-nav-link>
+            </div>
+        @endrole
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
