@@ -12,7 +12,7 @@ class FinpenController extends Controller
      */
     public function index()
     {
-        //
+        return view('finpen.index');
     }
 
     /**
