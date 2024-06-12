@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FinpenController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,12 +30,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/finpen', function () {
-        'finpen';
-    })->name('finpen')->middleware('role:user');
-    Route::patch('/finpen-report', function () {
-        'finpen report';
-    })->name('finpen.report')->middleware('role:admin');
+    Route::get('/finpen', [FinpenController::class, 'index'])->name('finpen')->middleware('role:user');
+    Route::get('/finpen/create', [FinpenController::class, 'create'])->name('finpen.create')->middleware('role:user');
 });
 
 
