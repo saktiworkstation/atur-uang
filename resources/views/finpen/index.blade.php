@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
-                    <x-link-primary-button :url="route('Finpen.create')">{{ __('Add New Finpen') }}</x-link-primary-button>
+                    <x-link-primary-button :url="route('finpen.create')">{{ __('Add New Finpen') }}</x-link-primary-button>
                 </div>
             </div>
 
@@ -26,25 +26,7 @@
                             </tr>
                         </thead>
                         <tbody class="bg-gray-500">
-                            @foreach ($datas as $data)
-                                <tr class="text-white">
-                                    <td class="px-6 py-2 border border-slate-700">{{ $data->interest }}</td>
-                                    <td class="px-6 py-2 border border-slate-700">
-                                        <a href="/interest/{{ $data->id }}/edit" class="">
-                                            Edit</span>
-                                        </a>
-                                        <form action="/interest/{{ $data->id }}/delete" method="post"
-                                            class="d-inline">
-                                            @method('delete')
-                                            @csrf
-                                            <button class=""
-                                                onclick="return confirm('Are you sure want to delete {{ $data->company }}?')">
-                                                Hapus</span>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
+                            data disini
                         </tbody>
                     </table>
                 </div>
