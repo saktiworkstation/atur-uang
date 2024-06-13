@@ -34,6 +34,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/finpen', 'index')->name('finpen')->middleware('role:user');
         Route::get('/finpen/create', 'create')->name('finpen.create')->middleware('role:user');
         Route::post('/finpen/store', 'store')->name('finpen.store')->middleware('role:user');
+        Route::post('/finpen/show', 'show')->name('finpen.show')->middleware('role:user');
         Route::post('/finpen/report', 'report')->name('finpen.report')->middleware('role:admin');
     });
 });
