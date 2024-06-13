@@ -30,11 +30,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/finpen', [FinpenController::class, 'index'])->name('finpen')->middleware('role:user');
-    Route::get('/finpen/create', [FinpenController::class, 'create'])->name('finpen.create')->middleware('role:user');
-    Route::post('/finpen/store', [FinpenController::class, 'store'])->name('finpen.store');
+    Route::controller(FinpenController::class)->group(function () {
+        Route::get('/finpen', 'index')->name('finpen')->middleware('role:user');
+        Route::get('/finpen/create', 'create')->name('finpen.create')->middleware('role:user');
+        Route::post('/finpen/store', 'store')->name('finpen.store');
+    });
 });
-
-
 
 require __DIR__.'/auth.php';
