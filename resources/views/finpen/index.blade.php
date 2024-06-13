@@ -18,9 +18,6 @@
                     <h4 class="pb-3 font-semibold text-xl text-gray-800 leading-tight">
                         {{ __('Finpen Data') }}
                     </h4>
-
-
-
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead

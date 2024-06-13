@@ -12,7 +12,9 @@ class FinpenController extends Controller
      */
     public function index()
     {
-        return view('finpen.index');
+        return view('finpen.index', [
+            'datas' => Finpen::latest()->get()
+        ]);
     }
 
     /**
