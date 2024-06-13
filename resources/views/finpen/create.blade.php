@@ -23,10 +23,31 @@
                         <form method="POST" action="{{ route('finpen.store') }}" class="mt-6 space-y-6">
                             @csrf
                             <div>
-                                <x-input-label for="saldo" :value="__('saldo')" />
-                                <x-text-input id="saldo" name="saldo" type="number" class="mt-1 block w-full"
-                                    :value="old('saldo')" required autofocus autocomplete="saldo" />
-                                <x-input-error class="mt-2" :messages="$errors->get('saldo')" />
+                                <x-input-label for="balance" :value="__('balance')" />
+                                <x-text-input id="balance" name="balance" type="number" class="mt-1 block w-full"
+                                    :value="old('balance')" required autofocus autocomplete="balance"
+                                    placeholder="beginning balance" />
+                                <x-input-error class="mt-2" :messages="$errors->get('balance')" />
+                            </div>
+                            <div>
+                                <x-input-label for="finpen_name" :value="__('finpen_name')" />
+                                <x-text-input id="finpen_name" name="finpen_name" type="text"
+                                    class="mt-1 block w-full" :value="old('finpen_name')" required autofocus
+                                    autocomplete="finpen_name" placeholder="My Monthly fee" />
+                                <x-input-error class="mt-2" :messages="$errors->get('finpen_name')" />
+                            </div>
+                            <div>
+                                <x-input-label for="province" :value="__('province')" />
+                                <x-text-input id="province" name="province" type="text" class="mt-1 block w-full"
+                                    :value="old('province')" required autofocus autocomplete="province" placeholder="Bali" />
+                                <x-input-error class="mt-2" :messages="$errors->get('province')" />
+                            </div>
+                            <div>
+                                <x-input-label for="descriptions" :value="__('descriptions')" />
+                                <x-text-input id="descriptions" name="descriptions" type="text"
+                                    class="mt-1 block w-full" :value="old('descriptions')" required autofocus
+                                    autocomplete="descriptions" placeholder="Description of this Finpen" />
+                                <x-input-error class="mt-2" :messages="$errors->get('descriptions')" />
                             </div>
 
                             <div class="flex items-center gap-4">
