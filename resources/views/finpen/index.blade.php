@@ -30,6 +30,7 @@
                                     </a>
                                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                                         Balance : {{ $item->balance }}<br>
+                                        Author : {{ $item->Author->name }}<br>
                                         Description : {{ $item->description }}
                                     </p>
                                     <a href="#"
