@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->integer('saldo');
-            $table->string('book_name');
+            $table->string('finpen_name');
             $table->string('province');
             $table->text('description');
             $table->timestamps();
