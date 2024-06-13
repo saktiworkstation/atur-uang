@@ -43,11 +43,11 @@
                                 <x-input-error class="mt-2" :messages="$errors->get('province')" />
                             </div>
                             <div>
-                                <x-input-label for="descriptions" :value="__('descriptions')" />
-                                <x-text-input id="descriptions" name="descriptions" type="text"
-                                    class="mt-1 block w-full" :value="old('descriptions')" required autofocus
-                                    autocomplete="descriptions" placeholder="Description of this Finpen" />
-                                <x-input-error class="mt-2" :messages="$errors->get('descriptions')" />
+                                <x-input-label for="description" :value="__('description')" />
+                                <x-text-input id="description" name="description" type="text"
+                                    class="mt-1 block w-full" :value="old('description')" required autofocus
+                                    autocomplete="description" placeholder="Description of this Finpen" />
+                                <x-input-error class="mt-2" :messages="$errors->get('description')" />
                             </div>
 
                             <div class="flex items-center gap-4">
