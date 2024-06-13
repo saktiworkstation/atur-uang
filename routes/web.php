@@ -32,6 +32,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/finpen', [FinpenController::class, 'index'])->name('finpen')->middleware('role:user');
     Route::get('/finpen/create', [FinpenController::class, 'create'])->name('finpen.create')->middleware('role:user');
+    Route::post('/finpen/store', [FinpenController::class, 'store'])->name('finpen.store');
 });
 
 
