@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('finpens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->integer('saldo');
+            $table->integer('balance');
             $table->string('finpen_name');
             $table->string('province');
             $table->text('description');
