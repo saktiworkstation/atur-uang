@@ -35,8 +35,8 @@
                                     <th scope="col" class="px-6 py-3">
                                         Price
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        <span class="sr-only">Edit</span>
+                                    <th scope="col" class="px-6 py-3 text-right">
+                                        <span class="bold">Edit</span>
                                     </th>
                                 </tr>
                             </thead>
