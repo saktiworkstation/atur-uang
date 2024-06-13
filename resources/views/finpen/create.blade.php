@@ -14,7 +14,6 @@
                             <h2 class="text-lg font-medium text-gray-900">
                                 {{ __('Create Finpen') }}
                             </h2>
-
                             <p class="mt-1 text-sm text-gray-600">
                                 {{ __('Added your newes Finpen here.') }}
                             </p>
