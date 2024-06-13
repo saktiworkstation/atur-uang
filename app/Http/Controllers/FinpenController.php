@@ -22,7 +22,7 @@ class FinpenController extends Controller
      */
     public function create()
     {
-        //
+        return view('finpen.create');
     }
 
     /**
