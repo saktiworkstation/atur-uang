@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Finpen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FinpenController extends Controller
 {
@@ -30,7 +31,18 @@ class FinpenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'balance' => 'required|numeric',
+            'finpen_name' => 'required|string',
+            'province' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        $validatedData['user_id'] = Auth::user()->id;
+
+        Finpen::create($validatedData);
+
+        return redirect('finpen')->with('success', 'New finpen has been added!');
     }
 
     /**
