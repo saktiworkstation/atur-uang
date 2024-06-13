@@ -48,9 +48,11 @@ class FinpenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Finpen $finpen)
+    public function show($id)
     {
-        //
+        return view('finpen.show', [
+            'data' => Finpen::where('id', $id)->firstOrFail()
+        ]);
     }
 
     /**
