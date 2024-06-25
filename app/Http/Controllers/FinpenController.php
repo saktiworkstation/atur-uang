@@ -13,8 +13,9 @@ class FinpenController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         return view('finpen.index', [
-            'datas' => Finpen::latest()->get()
+            'datas' => Finpen::where('user_id', $user->id)->firstOrFail()->get(),
         ]);
     }
 
