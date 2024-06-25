@@ -29,13 +29,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::controller(FinpenController::class)->group(function () {
-        Route::get('/finpen', 'index')->name('finpen')->middleware('role:user');
-        Route::get('/finpen/create', 'create')->name('finpen.create')->middleware('role:user');
-        Route::post('/finpen/store', 'store')->name('finpen.store')->middleware('role:user');
+Route::controller(FinpenController::class)->group(function () {
+    Route::post('/finpen/report', 'report')->name('finpen.report')->middleware('role:admin');
+    Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
+        Route::get('/finpen', 'index')->name('finpen');
+        Route::get('/finpen/create', 'create')->name('finpen.create');
+        Route::post('/finpen/store', 'store')->name('finpen.store');
         Route::get('/finpen/show/{id}', 'show');
-        Route::post('/finpen/report', 'report')->name('finpen.report')->middleware('role:admin');
     });
 });
 
