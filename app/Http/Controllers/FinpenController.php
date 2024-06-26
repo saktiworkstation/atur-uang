@@ -75,9 +75,26 @@ class FinpenController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Finpen $finpen)
+    public function update(Request $request, $id)
     {
-        //
+        $finpen = finpen::where('id', $id)->firstOrFail();
+        if($finpen && $finpen->user_id == Auth::user()->id){
+            $rules = [
+                'balance' => 'required|numeric',
+                'finpen_name' => 'required|string',
+                'province' => 'required|string',
+                'description' => 'required|string',
+            ];
+
+            $validatedData = $request->validate($rules);
+
+            finpen::where('id', $id)->update($validatedData);
+
+            return redirect('finpen')->with('success', 'finpen has been updated!');
+        }
+        else{
+            return redirect('finpen')->with('success', 'finpen Not Faund');
+        }
     }
 
     /**
