@@ -100,8 +100,19 @@ class FinpenController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Finpen $finpen)
+    public function destroy($id)
     {
-        //
+        $finpen = Finpen::where('id', $id)->firstOrFail();
+        $user = Auth::user();
+        if ($finpen && ($finpen->user_id == Auth::user()->id || $user->roles->contains('name', 'admin'))) {
+            Finpen::destroy($id);
+            if($user->roles->contains('name', 'admin')){
+                return redirect('report/finpen')->with('success', 'finpen has been deleted!');
+            }
+                return redirect('finpen')->with('success', 'finpen has been deleted!');
+            }
+        else {
+            return redirect('report/finpen')->with('success', 'finpen Not Faund');
+        }
     }
 }
