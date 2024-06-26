@@ -59,9 +59,17 @@ class FinpenController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Finpen $finpen)
+    public function edit($id)
     {
-        //
+        $finpen = Finpen::where('id', $id)->firstOrFail();
+        if($finpen && $finpen->user_id == Auth::user()->id){
+            return view('finpen.edit',[
+                'data' => Finpen::where('id', $id)->firstOrFail(),
+            ]);
+            }
+        else{
+            return redirect('finpen')->with('success', 'finpen Not Faund');
+        }
     }
 
     /**
