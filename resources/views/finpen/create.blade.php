@@ -32,7 +32,7 @@
                                 <x-input-label for="finpen_name" :value="__('finpen_name')" />
                                 <x-text-input id="finpen_name" name="finpen_name" type="text"
                                     class="mt-1 block w-full" :value="old('finpen_name')" required autofocus
-                                    autocomplete="finpen_name" placeholder="My Monthly fee" />
+                                    autocomplete="finpen_name" placeholder="Finpen Name" />
                                 <x-input-error class="mt-2" :messages="$errors->get('finpen_name')" />
                             </div>
                             <div>
