@@ -36,6 +36,8 @@ Route::controller(FinpenController::class)->group(function () {
         Route::get('/finpen/create', 'create')->name('finpen.create');
         Route::post('/finpen/store', 'store')->name('finpen.store');
         Route::get('/finpen/show/{id}', 'show');
+        Route::get('/finpen/edit/{id}', 'edit');
+        Route::put('/finpen/update/{id}', 'update');
     });
 });
 
